@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Temperature Convertor</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    
+    </head>
+
+    <body class="container p-5"  data-bs-theme="dark">
+        <div class="container">
+            <h1 class="text-center mb-5">Temperature Convertor <hr></h1>
+            
+            <div class="input-group mb-3 ">
+                <input id="celcuis-input" type="text" class="form-control" placeholder="° C" aria-label="Username">
+                <span  class="input-group-text"></span>
+                <input id="ferinhiet-input" type="text" class="form-control" placeholder="° F" aria-label="Server">
+              </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+       
+    </body>
+</html>
+<script>
+let celcuisInput = document.getElementById("celcuis-input");
+let ferinhietInput = document.getElementById("ferinhiet-input");
+
+let celcuisInputValue = 0;
+let ferinhietInputValue = 0;
+
+celcuisInput.addEventListener("input", () => {
+    celcuisInputValue = celcuisInput.value;
+    if (celcuisInputValue === "") {
+        ferinhietInput.value = 0;
+        return;
+    }
+    ferinhietInputValue = celcuisInputValue * (9 / 5) + 32;
+    ferinhietInput.value = ferinhietInputValue;
+});
+ferinhietInput.addEventListener("input", () => {
+    ferinhietInputValue = ferinhietInput.value;
+    if (ferinhietInput === "") {
+        celcuisInput.value = 0;
+        return;
+    }
+    celcuisInputValue = (ferinhietInputValue - 32) * (5 / 9);
+    celcuisInput.value = celcuisInputValue;
+});
+
+    
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: goldenrod;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            .square {
+                width: 525px;
+                height: 525px;
+                border: 15px solid peachpuff;
+                border-radius: 10px;
+            }
+            .image-container {
+                position: absolute;
+                transform: translate(300%, -675%);
+                animation: TireMovement 8s 0s infinite;
+            }
+
+            #car_image {
+                width: 100px;
+            }
+            @keyframes TireMovement {
+                0% {
+                    transform: translate(300%, -675%);
+                }
+                25% {
+                    transform: translate(-300%, -675%);
+                }
+                50% {
+                    transform: translate(-300%, 675%);
+                }
+                75% {
+                    transform: translate(300%, 675%);
+                }
+                100% {
+                    transform: translate(300%, -675%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image-container">
+            ̥
+            <img
+                id="car_image"
+                src="/Experiment_02/_03_transition_transformation_animation/CarImage.png"
+                alt=""
+            />
+        </div>
+
+        <div class="square"></div>
+
+        <script>
+            let carImage = document.getElementById("car_image");
+            currentOrientation = 0;
+            setInterval(() => {
+                currentOrientation = currentOrientation - 90;
+
+                carImage.style.transform = `rotate(${currentOrientation}deg)`;
+            }, 2000);
+        </script>
+    </body>
+</html>

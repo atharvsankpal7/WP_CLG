@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.header {
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.header a {
+    color: #180000;
+    text-decoration: none;
+}
+.header a:hover {
+    color: #180000;
+    text-decoration: underline;
+}
+.name {
+    font-size: 24px;
+}
+
+.contact {
+    font-style: italic;
+}
+
+h2 {
+    text-align: center;
+    color: #3498db;
+}
+.education,
+.projects {
+    background-color: #fff;
+    margin: 20px 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: palegoldenrod;
+    box-shadow: 0 0 10px black;
+}
+.education:hover,
+.projects:hover {
+    box-shadow: 0 0 15px rgb(230, 6, 6);
+}
+.projects a {
+    color: #e74c3c;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.projects a:hover {
+    color: #180000;
+    text-decoration: underline;
+    font-size: larger;
+}

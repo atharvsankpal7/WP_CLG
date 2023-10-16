@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple and Accurate Calculator</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+
+            * {
+                text-transform: capitalize;
+                font-family: "Inter", sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .mainbody {
+                display: grid;
+                justify-items: center;
+            }
+
+            .buttondiv {
+                display: flex;
+                text-align: center;
+            }
+
+            .buttons {
+                width: 53px;
+                height: 55px;
+                margin: 3px;
+                cursor: pointer;
+                border: 1px solid rgb(95, 94, 94);
+                border-radius: 5px;
+                font-size: 25px;
+                font-weight: lighter;
+            }
+
+            #textpreview {
+                width: 225px;
+                height: 30px;
+                margin-bottom: 10px;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1 style="text-align: center">calculator</h1>
+            <div class="mainbody">
+                <div class="display">
+                    <input
+                        type="text"
+                        name=""
+                        id="textpreview"
+                        style="font-weight: bold; font-size: large"
+                    />
+                </div>
+                <div class="buttondiv">
+                    <button class="buttons">c</button>
+                    <button class="buttons">d</button>
+                    <button class="buttons">=</button>
+                    <button class="buttons">+</button>
+                </div>
+                <div class="buttondiv">
+                    <button class="buttons">7</button>
+                    <button class="buttons">8</button>
+                    <button class="buttons">9</button>
+                    <button class="buttons">+</button>
+                </div>
+                <div class="buttondiv">
+                    <button class="buttons">4</button>
+                    <button class="buttons">5</button>
+                    <button class="buttons">6</button>
+                    <button class="buttons">-</button>
+                </div>
+                <div class="buttondiv">
+                    <button class="buttons">1</button>
+                    <button class="buttons">2</button>
+                    <button class="buttons">3</button>
+                    <button class="buttons">*</button>
+                </div>
+                <div class="buttondiv">
+                    <button class="buttons">0</button>
+                    <button class="buttons">00</button>
+                    <button class="buttons">.</button>
+                    <button class="buttons">/</button>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+<script>
+    let string = "";
+    let input = document.getElementsByClassName("buttons");
+    let input_array = Array.from(input);
+    input_array.forEach((element) => {
+        element.addEventListener("click", (event) => {
+            if (event.target.innerHTML == "c") {
+                string = "";
+                document.getElementById("textpreview").value = string;
+            } else if (event.target.innerHTML == "d") {
+                string = string.slice(0, -1);
+                document.getElementById("textpreview").value = string;
+            } else if (event.target.innerHTML == "=") {
+                string = eval(string);
+                document.getElementById("textpreview").value = string;
+            } else {
+                string += event.target.innerHTML;
+                document.getElementById("textpreview").value = string;
+            }
+        });
+    });
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: steelblue;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            .square {
+                width: 500px;
+                height: 525px;
+                border: 15px solid #d2042d;
+            }
+            .image-container {
+                position: absolute;
+                transform: translate(-310%, -307%);
+                animation: TireMovement 8s 0s infinite;
+            }
+
+            #tire_image {
+                width: 100px;
+                animation: TireRotation 2s 0s infinite;
+            }
+            @keyframes TireMovement {
+                0% {
+                    transform: translate(-310%, -307%);
+                }
+                25% {
+                    transform: translate(310%, -307%);
+                }
+                50% {
+                    transform: translate(310%, 315%);
+                }
+                75% {
+                    transform: translate(-310%, 315%);
+                }
+                100% {
+                    transform: translate(-310%, -307%);
+                }
+            }
+            @keyframes TireRotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image-container">
+            <img
+                id="tire_image"
+                src="/Experiment_02/_03_transition_transformation_animation/TireImage.png"
+                alt=""
+            />
+        </div>
+
+        <div class="square"></div>
+    </body>
+</html>
+<script>
+    alert("please open in full screen");
+</script>

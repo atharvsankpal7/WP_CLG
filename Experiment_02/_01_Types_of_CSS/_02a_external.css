@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 50;
+
+}
+
+
+#bruh {
+    background-color: red;
+    color: rgb(222, 222, 222);
+}
+
+.hello {
+    background-color: brown;
+    color: rgb(238, 135, 0);
+
+}
+
+#fourth_heading {
+    background-color: black;
+    color: rgb(232, 215, 30);
+}
+
+.one_li1 {
+    color: blanchedalmond;
+    background-color: crimson;
+}
+
+.one_li2 {
+    color: crimson;
+    background-color: blanchedalmond;
+}
+
+.first {
+    background: #39FF14;
+}
+
+.second {
+    color: red;
+    /* color: navajowhite; */
+}
+
+.third {
+    margin: 10px;
+}
+
+.fourth {
+    border: solid gray 3px;
+    margin: 10px 10px 20px;
+}

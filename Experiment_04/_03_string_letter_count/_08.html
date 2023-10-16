@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            textarea {
+                resize: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input-container">
+            <label for="string-input">Enter the string</label>
+            <input type="text" name="" id="string-input" />
+        </div>
+        <hr />
+        <div class="output-container">
+            <span>Vowel Count : </span> <span id="vowel-count-number">0</span>
+            <br />
+            <span>Consonant Count : </span>
+            <span id="consonant-count-number">0</span>
+        </div>
+    </body>
+</html>
+<script>
+    let inputText = document.getElementById("string-input");
+    let vowelCountSpan = document.getElementById("vowel-count-number");
+    let consonantCountSpan = document.getElementById("consonant-count-number");
+    let vowelCount = 0;
+    let consonantCount = 0;
+
+    inputText.addEventListener("input", () => {
+        let inputString = inputText.value;
+        vowelCount = 0;
+        consonantCount = 0;
+        [...inputString].forEach((i) => {
+            if (["a", "e", "i", "o", "u"].includes(i)) {
+                vowelCount++;
+            } else if (
+                65 <= i.charCodeAt(0) <= 90 ||
+                97 <= i.charCodeAt(0) <= 122
+            ) {
+                consonantCount++;
+            }
+        });
+        vowelCountSpan.innerHTML = vowelCount;
+        consonantCountSpan.innerHTML = consonantCount;
+    });
+</script>
