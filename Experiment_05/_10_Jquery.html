@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Selectors and Events</title>
+    <style>
+        body {
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .box img {
+            /* TO center the image */
+            transform: translate(0, 50%);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>jQuery Selectors and Events Example</h1>
+
+    <div class="box" id="box1">Box 1</div>
+
+
+    <script>
+        // Entry Point (like a main function)
+        $(document).ready(function () {
+
+            $(".box").on("click", function () {
+                $(this).html('<img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT73Hx3joXluMeacnnC_5P92ZM4zbZq6-VYvWGrgPwLmEWlLRepRH1jYOGoQyHJYbviEnU&usqp=CAU" alt="Image" />')
+                // Method chaining to add multiple properties at once
+                $(this).css("background-color", "lightcoral").css("width", "400px").css("height", "400px  ");
+            });
+
+            $("#box1").on("mouseenter", function () {
+                $(this).text("Hovered");
+                $(this).css("background-color", "steelblue")
+            });
+
+            $("#box1").on("mouseleave", function () {
+                $(this).text("Box 1")
+                $(this).css("background-color", "skyblue")
+            })
+        });
+    </script>
+</body>
+
+</html>
