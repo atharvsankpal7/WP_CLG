@@ -95,21 +95,25 @@
 <script>
     let string = "";
     let input = document.getElementsByClassName("buttons");
+    let textPreview = document.getElementById("textpreview");
     let input_array = Array.from(input);
+    textPreview.addEventListener("change", () => {
+        string = textPreview.value;
+    });
     input_array.forEach((element) => {
         element.addEventListener("click", (event) => {
             if (event.target.innerHTML == "c") {
                 string = "";
-                document.getElementById("textpreview").value = string;
+                textPreview.value = string;
             } else if (event.target.innerHTML == "d") {
                 string = string.slice(0, -1);
-                document.getElementById("textpreview").value = string;
+                textPreview.value = string;
             } else if (event.target.innerHTML == "=") {
                 string = eval(string);
-                document.getElementById("textpreview").value = string;
+                textPreview.value = string;
             } else {
                 string += event.target.innerHTML;
-                document.getElementById("textpreview").value = string;
+                textPreview.value = string;
             }
         });
     });

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE University [
+    <!ELEMENT University (Employee+, Student+)>
+    <!ELEMENT Employee (ID, FirstName, LastName, Department)>
+    <!ELEMENT ID (#PCDATA)>
+    <!ELEMENT FirstName (#PCDATA)>
+    <!ELEMENT LastName (#PCDATA)>
+    <!ELEMENT Department (#PCDATA)>
+
+    <!ELEMENT Student (RollNumber, StudentName, Major)>
+    <!ELEMENT RollNumber (#PCDATA)>
+    <!ELEMENT StudentName (#PCDATA)>
+    <!ELEMENT Major (#PCDATA)>
+]>
+<University>
+    <Employee>
+        <ID>1</ID>
+        <FirstName>John</FirstName>
+        <LastName>Doe</LastName>
+        <Department>IT</Department>
+    </Employee>
+    <Employee>
+        <ID>2</ID>
+        <FirstName>Jane</FirstName>
+        <LastName>Smith</LastName>
+        <Department>HR</Department>
+    </Employee>
+    <Student>
+        <RollNumber>S001</RollNumber>
+        <StudentName>Alice Johnson</StudentName>
+        <Major>Computer Science</Major>
+    </Student>
+    <Student>
+        <RollNumber>S002</RollNumber>
+        <StudentName>Bob Williams</StudentName>
+        <Major>Mathematics</Major>
+    </Student>
+</University>

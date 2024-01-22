@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Selectors and Events</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery Selectors and Events Example</h1>
+
+    <div class="box" id="box1">Box 1</div>
+    <div class="box" id="box2">Box 2</div>
+    <div class="box" id="box3">Box 3</div>
+
+    <script>
+        // Document ready function
+        $(document).ready(function() {
+            // Using a jQuery selector to select elements by class
+            $(".box").on("click", function() {
+                $(this).css("background-color", "lightcoral");
+            });
+
+            // Using a jQuery selector to select elements by ID
+            $("#box1").on("mouseenter", function() {
+                $(this).text("Hovered");
+                $(this).css("background-color","steelblue")
+
+            });
+            $("#box1").on("mouseleave", function() {
+                $(this).text("Box 1");
+                $(this).css("background-color", "lightblue");
+
+            });
+        });
+    </script>
+</body>
+</html>
